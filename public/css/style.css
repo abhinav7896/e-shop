@@ -1,0 +1,40 @@
+.vl {
+    border-left: 2px solid #333B3F;
+    height: 20rem;
+  }
+  #myInput {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Vector_search_icon.svg/1200px-Vector_search_icon.svg.png");
+    background-position: 99% center;
+    background-size: 1.7em;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 20px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+  }
+  
+  #myTable tr:hover {
+    background-color: black;
+  }
+  
+  .button1 {
+    display: inline-block;
+    padding: 0.3em 1.2em;
+    border-radius: 2em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    color: #ffffff;
+    background-color: #4eb5f1;
+    text-align: center;
+    transition: all 0.2s;
+  }
+  .button1:hover {
+    background-color: #4095c6;
+    color: white;
+    text-decoration: none;    
+    
+  }
+  

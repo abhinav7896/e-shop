@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://use.fontawesome.com/39ac5a0cbe.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="mb-6">
+        <nav class="navbar-dark navbar-expand-lg navbar bg-dark">
+            <div class="container container-fluid">
+                <div class="navbar-brand">
+                    <h1 class="display-5 text-white"><a class="text-white" href="/home">E-Shop</a></h1>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/home">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/home">Register</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/products/display">View Products</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <h1 class="display-2 text-center mt-5 mb-5">Welcome to E-Shop <i class="fa fa-shopping-bag"></i></h1>
+        <hr class="mt-5 mb-5">
+        <div class="row text-center">
+            <div class="col-md-6 mr-5">
+                <form action="/products/register" method="POST" class="w-100 p-3">
+                    <h2>New here? Register</h2>
+                    <div>
+                        <hr />
+                    </div>
+                    <input type="text" class="form-control mt-3" name="username" id="username"
+                        aria-describedby="usernameHelp" placeholder="Enter your User Name" required>
+                    <input type="password" class="form-control mt-3" name="password" id="password"
+                        placeholder="Password" required>
+                    <input type="password" class="form-control mt-3" name="confirmpassword" id="confirmpassword"
+                        placeholder="Confirm Password" required>
+                    <p class=" mt-3 alert" id="pwmessage"></p>
+                    <input type="text" class="form-control mt-3" name="ename" id="ename" placeholder="E-Wallet Username"
+                        required>
+                    <input type="password" class="form-control mt-3" name="ewpassword" id="ewpassword"
+                        placeholder="E-Wallet Password" required>
+                    <button type="submit" id="submit_signup" class="btn btn-primary mt-2">Submit</button>
+                </form>
+            </div>
+            <div class="vl"></div>
+            <div class="col-md-5 mt-5">
+                <a class="btn btn-lg btn-outline-info w-50 ml-5" href="/products/display"><i class="fa fa-eye"></i>
+                    View
+                    Products</a>
+                <div style="margin-left: 15rem; margin-top: 3rem;" class="row"><img width="300rem" height="300rem"
+                        src="images/shopping_people.png" alt="img">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+<footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+        </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+        </script>
+        <script>
+            $(document).ready(function() {
+                $('#pwmessage').hide();
+                $('#confirmpassword').on('keyup', function() {
+                    if ($('#password').val() == $('#confirmpassword').val()) {
+                        $('#pwmessage').html('Passwords Match!').removeClass('alert-danger').addClass('alert-success');
+                        $('#submit_signup').prop('disabled', false);
+                    } else {
+                        $('#pwmessage').show();
+                        $('#pwmessage').html('Your Passwords Do Not Match!').addClass('alert-danger');
+                        $('#submit_signup').prop('disabled', true);
+                    }
+                });
+            });
+        </script>
+</footer>
+
+</html>

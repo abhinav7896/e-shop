@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://use.fontawesome.com/39ac5a0cbe.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/main.js"></script>
+
+</head>
+
+<body>
+    <header class="mb-6">
+        <nav class="navbar-dark navbar-expand-lg navbar bg-dark">
+            <div class="container container-fluid">
+                <div class="navbar-brand">
+                    <h1 class="display-5 text-white"><a class="text-white" href="/home">E-Shop</a></h1>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/home">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/home">Register</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/products/display">View Products</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div></div>
+
+        <h1 class="display-2 mt-5 ml-5"><img width="20%" src="../images/man_shopping.png" alt="img1">Place
+            Order <i class="fa fa-shopping-cart"></i></h1>
+        <div class="card border-dark">
+            <div class="card-header bg-dark text-white text-center">
+                <h2>Please enter details &nbsp;<i class="fa fa-edit"></i></h2>
+            </div>
+            <div class="card-body p-3">
+                <form action="/products/order" method="POST" class="w-100 p-3">
+                    <div class="input-group">
+                        <div class="input-group-prepend mb-2">
+                            <span class="input-group-text">Product Name</span>
+                        </div>
+                        <input class="form-control mb-2" type="text" name="productName" id="productName"
+                            value="<%=pName%>" readonly>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-group-prepend mb-2">
+                            <span class="input-group-text">Quantity</span>
+                        </div>
+                        <input class="form-control mb-2" type="number" min="1" name="qty" id="qty" required>
+                        <div class="input-group-prepend mb-2">
+                            <span class="input-group-text">x Unit Price ($)</span>
+                        </div>
+                        <input class="form-control mb-2" type='text' id="price" name="price" value="<%=price%>"
+                            readonly />
+                    </div>
+                    <input class="form-control mb-2" type="text" name="username" id="username" placeholder="Username"
+                        required>
+                    <input class="form-control mb-2" type="password" name="password" id="password"
+                        placeholder="Password" required>
+                    <button class="btn btn-info" type="submit">Place Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+        </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+        </script>
+</footer>
+
+</html>
